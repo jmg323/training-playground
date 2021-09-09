@@ -9,11 +9,11 @@ pipeline {
 		{
 			steps
 			{
-				filecreation(date1.txt)
-				readfile(date1.txt)
+				filecreation("date1.txt")
+				readfile("date1.txt")
 				sh 'sleep 10s'
-				filecreation(date2.txt)
-				readfile(date2.txt)				
+				filecreation("date2.txt")
+				readfile("date2.txt")				
 			}
 		}
     }
