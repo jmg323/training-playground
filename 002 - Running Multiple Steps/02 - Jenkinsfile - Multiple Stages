@@ -5,5 +5,31 @@ pipeline {
 		}
 	}
     stages {
+    	stage ('build')
+		{
+			steps
+			{
+				filecreation("date1.txt")
+				readfile("date1.txt")
+			
+			}
+		}
+    	stage ('test')
+		{
+			steps
+			{
+			sh "cat teste.txt | grep 2021"
+			}
+		}	
     }
+}
+def filecreation(filename='') { 
+	sh "date >> $filename"
+}
+def readfile(filename='') { 
+	sh "cat $filename"
+}
+
+def test2021(filename='') { 
+	sh "cat $filename"
 }
