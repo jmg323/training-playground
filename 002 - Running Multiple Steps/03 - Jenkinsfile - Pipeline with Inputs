@@ -4,9 +4,15 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
+
+    parameters {
+    string(name: 'NAME', defaultValue: '', description: '')
+    string(name: 'AGE', defaultValue: '0', description: '')
+
     stages {
         stage('build') {
             steps {
+	    	
                 echo "$NAME"
                 echo "$AGE"
             }
