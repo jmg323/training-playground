@@ -17,11 +17,11 @@ pipeline {
 			}
 		}
     }
-
+}
 def filecreation(filename='') { 
 	sh 'date >> $filename'
 }
 def readfile(filename='') { 
 	sh 'cat $filename'
 }
-}
+
