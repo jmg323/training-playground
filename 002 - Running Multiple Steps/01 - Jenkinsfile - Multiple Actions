@@ -24,3 +24,4 @@ def filecreation(filename='') {
 def readfile(filename='') { 
 	sh 'cat $filename'
 }
+}
