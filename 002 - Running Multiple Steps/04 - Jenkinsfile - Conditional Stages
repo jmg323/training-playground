@@ -4,6 +4,38 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
+	
+    parameters {
+    choice(name: 'CHOICE', choices: ['build', 'test'], description: 'Chose your destiny')
+    }	
+	
     stages {
+    	stage ('build')
+		{
+            	when {	
+			steps
+			{
+				filecreation("date1.txt")
+				readfile("date1.txt")
+			
+			}
+		}
+		}
+    	stage ('test')
+		{
+		when {
+			steps
+			{
+			sh "echo excelent"
+			}
+		}
+		}
     }
+}
+}
+def filecreation(filename='') { 
+	sh "date >> $filename"
+}
+def readfile(filename='') { 
+	sh "cat $filename"
 }
