@@ -13,6 +13,8 @@ pipeline {
     	stage ('build')
 		{
             	when {	
+			expression { params.CHOICE == 'build' }
+		}
 			steps
 			{
 				filecreation("date1.txt")
@@ -20,15 +22,16 @@ pipeline {
 			
 			}
 		}
-		}
     	stage ('test')
 		{
 		when {
+			expression { params.CHOICE == 'test' }
+		}
 			steps
 			{
 			sh "echo excelent"
 			}
-		}
+		
 		}
     }
 }
