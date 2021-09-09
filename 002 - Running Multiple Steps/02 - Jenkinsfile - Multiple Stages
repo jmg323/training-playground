@@ -18,7 +18,7 @@ pipeline {
 		{
 			steps
 			{
-			sh "cat teste.txt | grep 2021"
+			sh "cat date1.txt | grep 2021"
 			}
 		}	
     }
@@ -30,6 +30,3 @@ def readfile(filename='') {
 	sh "cat $filename"
 }
 
-def test2021(filename='') { 
-	sh "cat $filename"
-}
