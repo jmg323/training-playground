@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage('build java') {
+        stage('build maven') {
         	agent { 
 			dockerfile { 
 				filename '04 - Dockerfile - maven - Multiple Agents using Dockerfile'
@@ -12,7 +12,7 @@ pipeline {
 			sh 'mvn --version'
 		}
 	}
-        stage('build java') {
+        stage('build alpine') {
         	agent { 
 			dockerfile { 
 				filename '04 - Dockerfile - alpine - Multiple Agents using Dockerfile'
