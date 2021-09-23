@@ -11,7 +11,8 @@ pipeline {
                 sh "date >> data.txt"
 		sh "ls -lta"
             }
-        }
+          }
+	}
 	post {
         // Clean after build
         	always {
