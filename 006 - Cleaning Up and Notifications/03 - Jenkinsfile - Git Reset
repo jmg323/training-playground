@@ -5,10 +5,18 @@ pipeline {
 		}
 	}
     stages {
-        stage('build') {
+        stage('clear') {
             steps {
-                sh ""
+	        sh "ls -lta"
+		sh "git reset"
             }
+	 }
+	 stage('build') {
+            steps {
+	    	sh "ls -lta"
+                sh "date >> data.txt"
+		sh "ls -lta"
+           }
         }
-    }
+}
 }
