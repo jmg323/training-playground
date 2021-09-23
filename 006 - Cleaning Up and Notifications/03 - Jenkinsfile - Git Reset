@@ -1,8 +1,9 @@
 pipeline {
     agent { 
-		docker { 
-			image 'alpine:latest' 
-		}
+			dockerfile { 
+				filename '06 - Dockerfile - git'
+				dir '006 - Cleaning Up and Notifications'
+			}
 	}
     stages {
         stage('clear') {
